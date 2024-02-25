@@ -11,7 +11,7 @@ const descriptions = {
 
 function scrape() {
   // website has already been analyzed
-  if (document.getElementById("insite_count")) {
+  if (document.getElementById("deceptify_count")) {
     return;
   }
 
@@ -55,7 +55,7 @@ function scrape() {
 
       // store number of dark patterns
       let g = document.createElement("div");
-      g.id = "insite_count";
+      g.id = "deceptify_count";
       g.value = dp_count;
       g.style.opacity = 0;
       g.style.position = "fixed";
@@ -69,10 +69,10 @@ function scrape() {
 }
 
 function highlight(element, type) {
-  element.classList.add("insite-highlight");
+  element.classList.add("deceptify-highlight");
 
   let body = document.createElement("span");
-  body.classList.add("insite-highlight-body");
+  body.classList.add("deceptify-highlight-body");
 
   /* header */
   let header = document.createElement("div");
@@ -102,7 +102,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.message === "analyze_site") {
     scrape();
   } else if (request.message === "popup_open") {
-    let element = document.getElementById("insite_count");
+    let element = document.getElementById("deceptify_count");
     if (element) {
       sendDarkPatterns(element.value);
     }
