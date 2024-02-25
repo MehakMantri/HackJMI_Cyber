@@ -2,10 +2,10 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 from joblib import load
 
-presence_classifier = load('C:\\Users\\Asus\\Desktop\\dark-patterns-recognition-master\\api\\presence_classifier.joblib')
-presence_vect = load('C:\\Users\\Asus\\Desktop\\dark-patterns-recognition-master\\api\\presence_vectorizer.joblib')
-category_classifier = load('C:\\Users\Asus\Desktop\dark-patterns-recognition-master\\api\\category_classifier.joblib')
-category_vect = load('C:\\Users\\Asus\\Desktop\\dark-patterns-recognition-master\\api\category_vectorizer.joblib')
+presence_classifier = load('C:\\Users\\Asus\\Desktop\\HackJMI_Cyber\\api\\category_classifier.joblib')
+presence_vect = load('C:\\Users\\Asus\\Desktop\\HackJMI_Cyber\\api\\presence_vectorizer.joblib')
+category_classifier = load('C:\\Users\Asus\Desktop\HackJMI_Cyber\\api\\category_classifier.joblib')
+category_vect = load('C:\\Users\\Asus\\Desktop\\HackJMI_Cyber\\api\category_vectorizer.joblib')
 
 app = Flask(__name__)
 CORS(app)
